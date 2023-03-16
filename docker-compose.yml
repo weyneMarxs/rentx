@@ -1,18 +1,17 @@
 version: "3.7"
 
 services:
-  database_ignite:
-    image: postgres
-    container_name: database_ignite
+  db:
+    image: postgres:14.1-alpine
     restart: always
-    ports:
-      - 5432:5555
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=ignite
-      - POSTGRES_DB=rentx
-    volumes:
-      - pgdata:/data/postgres  
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      -  POSTGRES_DB=rentx
+    ports:
+      - '5432:5432'
+    volumes: 
+      - db:/var/lib/postgresql/data
     network_mode: host
   app:
     build: .
@@ -24,5 +23,5 @@ services:
     network_mode: host
 
 volumes:
-  pgdata:
+  db:
     driver: local
