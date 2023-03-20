@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.8"
 
 services:
   db:
@@ -7,12 +7,11 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=root
-      -  POSTGRES_DB=rentx
+      - POSTGRES_DB=rentx
     ports:
-      - '5432:5432'
+      - 5555:5432
     volumes: 
       - db:/var/lib/postgresql/data
-    network_mode: host
   app:
     build: .
     container_name: rentx
@@ -20,8 +19,6 @@ services:
       - 3333:3333
     volumes:
       - .:/usr/app
-    network_mode: host
-
 volumes:
   db:
     driver: local
