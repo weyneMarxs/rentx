@@ -1,8 +1,12 @@
-{
-  "type": "postgres",
-  "port": 5432,
-  "host": "172.18.0.2",
-  "username": "postgres",
-  "password": "root",
-  "database": "rentx"
-}
+// {
+//   "type": "postgres",
+//   "port": 5432,
+//   "host": "172.18.0.2",
+//   "username": "postgres",
+//   "password": "root",
+//   "database": "rentx",
+//   "migrations": ["./src/database/migrations/*.ts"],
+//   "cli": {
+//     "migrationsDir": "./src/database/migrations"
+//   }
+// }
